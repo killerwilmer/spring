@@ -7,7 +7,7 @@
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 
-	<bean id="persona" class="com.killerwilmer.beans.Persona">
+	<bean id="persona" class="com.killerwilmer.beans.Persona" name="personaBean">
 		<property name="pais">
 			<bean id="pais" class="com.killerwilmer.beans.Pais">
 				<property name="nombre" value="Colombia"></property>

@@ -26,7 +26,7 @@ public class App {
 		
 		// Por xml
 		ApplicationContext applicationContextXml = new ClassPathXmlApplicationContext("com/killerwilmer/xml/beans.xml");
-		Persona persona = (Persona) applicationContextXml.getBean("persona");
+		Persona persona = (Persona) applicationContextXml.getBean("personaBean");
 		System.out.print(persona.getId() + " " + persona.getNombre() + " " + persona.getApodo() + " " + persona.getPais().getNombre() + " " + persona.getPais().getCiudad().getNombre());
 		((ConfigurableApplicationContext)applicationContextXml).close();
 	}

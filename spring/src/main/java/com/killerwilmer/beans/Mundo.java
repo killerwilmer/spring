@@ -1,6 +1,10 @@
 package com.killerwilmer.beans;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Mundo {
+	
+	@Value("Hola Mundo!")
 	private String saludo;
 
 	public String getSaludo() {

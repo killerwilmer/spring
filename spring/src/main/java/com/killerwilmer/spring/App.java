@@ -8,11 +8,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.killerwilmer.beans.AppConfig;
 import com.killerwilmer.beans.AppConfig2;
 import com.killerwilmer.beans.Mundo;
+import com.killerwilmer.beans.Persona;
 
 public class App {
 
 	public static void main(String[] args) {
-		//ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/killerwilmer/xml/beans.xml");
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 		applicationContext.register(AppConfig.class);
 		applicationContext.register(AppConfig2.class);
@@ -23,6 +23,12 @@ public class App {
 		System.out.print(mundo.getSaludo());
 		
 		((ConfigurableApplicationContext)applicationContext).close();
+		
+		// Por xml
+		ApplicationContext applicationContextXml = new ClassPathXmlApplicationContext("com/killerwilmer/xml/beans.xml");
+		Persona persona = (Persona) applicationContextXml.getBean("persona");
+		System.out.print(persona.getId() + " " + persona.getNombre() + " " + persona.getApodo());
+		((ConfigurableApplicationContext)applicationContextXml).close();
 	}
 
 }

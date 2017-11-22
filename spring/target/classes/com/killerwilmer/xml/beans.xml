@@ -7,4 +7,10 @@
 	<property name="saludo" value="Hola Mundo!"></property>
 </bean>
 
+<bean id="persona" class="com.killerwilmer.beans.Persona">
+	<constructor-arg value="1"></constructor-arg>
+	<constructor-arg value="Wilmer"></constructor-arg>
+	<constructor-arg value="Killerwilmer"></constructor-arg>
+</bean>
+
 </beans>

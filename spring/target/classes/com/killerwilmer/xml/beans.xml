@@ -8,9 +8,19 @@
 </bean>
 
 <bean id="persona" class="com.killerwilmer.beans.Persona">
-	<constructor-arg value="1"></constructor-arg>
-	<constructor-arg value="Wilmer"></constructor-arg>
-	<constructor-arg value="Killerwilmer"></constructor-arg>
+	<property name="pais" ref="pais"></property>
+	<property name="id" value="1"></property>
+	<property name="nombre" value="Wilmer"></property>
+	<property name="apodo" value="Killerwilmer"></property>
+</bean>
+
+<bean id="pais" class="com.killerwilmer.beans.Pais">
+	<property name="nombre" value="Colombia"></property>
+	<property name="ciudad" ref="ciudad"></property>
+</bean>
+
+<bean id="ciudad" class="com.killerwilmer.beans.Ciudad">
+	<property name="nombre" value="Bogotá"></property>
 </bean>
 
 </beans>

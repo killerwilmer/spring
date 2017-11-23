@@ -29,13 +29,9 @@ public class App {
 		
 		// Por xml
 		ApplicationContext applicationContextXml = new ClassPathXmlApplicationContext("com/killerwilmer/xml/beans.xml");
-		Persona persona = (Persona) applicationContextXml.getBean("personaBean");
+		Persona persona = (Persona) applicationContextXml.getBean("persona");
 		
-		String nombresCiudades = ""; 
-		for (Ciudad ciudad : persona.getPais().getCiudades()) {
-			nombresCiudades += ciudad.getNombre() + "-";
-		}
-		System.out.print(persona.getId() + " " + persona.getNombre() + " " + persona.getApodo() + " " + persona.getPais().getNombre() + " " + nombresCiudades);
+		System.out.print(persona.getId() + " " + persona.getNombre() + " " + persona.getApodo() + " " + persona.getPais().getNombre() + " " + persona.getCiudad().getNombre());
 		((ConfigurableApplicationContext)applicationContextXml).close();
 	}
 

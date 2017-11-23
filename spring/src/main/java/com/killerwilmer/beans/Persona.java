@@ -5,7 +5,14 @@ public class Persona {
 	private String nombre;
 	private String apodo;
 	private Pais pais;
+	private Ciudad ciudad;
 	
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
+	}
 	public Pais getPais() {
 		return pais;
 	}

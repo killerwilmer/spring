@@ -7,8 +7,7 @@
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 
-	<bean id="persona" class="com.killerwilmer.beans.Persona" name="personaBean">
-		<property name="pais" ref="pais"></property>
+	<bean id="persona" class="com.killerwilmer.beans.Persona" autowire="byName">
 		<property name="id" value="1"></property>
 		<property name="nombre" value="Wilmer"></property>
 		<property name="apodo" value="Killerwilmer"></property>
@@ -16,25 +15,10 @@
 
 	<bean id="pais" class="com.killerwilmer.beans.Pais">
 		<property name="nombre" value="Colombia"></property>
-		<property name="ciudades">
-			<list>
-				<ref bean="ciudad1"/>
-				<ref bean="ciudad2"/>
-				<ref bean="ciudad3"/>
-			</list>
-		</property>
 	</bean>
 
-	<bean id="ciudad1" class="com.killerwilmer.beans.Ciudad">
+	<bean id="ciudad" class="com.killerwilmer.beans.Ciudad">
 		<property name="nombre" value="Bogotá"></property>
-	</bean>
-	
-	<bean id="ciudad2" class="com.killerwilmer.beans.Ciudad">
-		<property name="nombre" value="Medellin"></property>
-	</bean>
-	
-	<bean id="ciudad3" class="com.killerwilmer.beans.Ciudad">
-		<property name="nombre" value="Cali"></property>
 	</bean>
 
 </beans>

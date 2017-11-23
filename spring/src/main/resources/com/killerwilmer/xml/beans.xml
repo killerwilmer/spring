@@ -7,8 +7,8 @@
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 
-	<bean id="persona" class="com.killerwilmer.beans.Persona" autowire="byName">
-		<property name="id" value="1"></property>
+	<bean id="persona" class="com.killerwilmer.beans.Persona" autowire="byName" scope="singleton" lazy-init="true"><!-- singleton hace referencia al mismo objeto y esta por default -->
+		<property name="id" value="1"></property>																<!-- lazy-init solo es aplicable para singleton y hay que cargar bean por bean -->
 		<property name="nombre" value="Wilmer"></property>
 		<property name="apodo" value="Killerwilmer"></property>
 	</bean>

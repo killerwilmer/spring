@@ -7,6 +7,14 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudad;
 	
+	public void init( ) {
+		System.out.println("Antes de iniciar el bean");
+	}
+	
+	public void destroy() {
+		System.out.println("Bean a punto de ser destruido");
+	}
+	
 	public Ciudad getCiudad() {
 		return ciudad;
 	}

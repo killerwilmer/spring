@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init" default-destroy-method="destroy"><!-- Para el init y destroy global -->
 
 	<bean id="mundo" class="com.killerwilmer.beans.Mundo">
 		<property name="saludo" value="Hola Mundo!"></property>
 	</bean>
 
-	<bean id="persona" class="com.killerwilmer.beans.Persona" autowire="byName" scope="singleton" lazy-init="true"><!-- singleton hace referencia al mismo objeto y esta por default -->
-		<property name="id" value="1"></property>																<!-- lazy-init solo es aplicable para singleton y hay que cargar bean por bean -->
-		<property name="nombre" value="Wilmer"></property>
+	<bean id="persona" class="com.killerwilmer.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy">
 		<property name="apodo" value="Killerwilmer"></property>
 	</bean>
 

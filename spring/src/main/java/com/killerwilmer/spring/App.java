@@ -30,14 +30,10 @@ public class App {
 		// Por xml
 		ApplicationContext applicationContextXml = new ClassPathXmlApplicationContext("com/killerwilmer/xml/beans.xml");
 		Persona persona = (Persona) applicationContextXml.getBean("persona");
-		Persona persona2 = (Persona) applicationContextXml.getBean("persona");
 		
-		System.out.println(persona.getId() + " " + persona.getNombre() + " " + persona.getApodo() + " " + persona.getPais().getNombre() + " " + persona.getCiudad().getNombre());
-		System.out.println(persona2.getId() + " " + persona2.getNombre() + " " + persona2.getApodo() + " " + persona2.getPais().getNombre() + " " + persona2.getCiudad().getNombre());
-		System.out.println(persona);
-		System.out.println(persona2);
+		System.out.println(persona.getApodo());
 		
-		((ConfigurableApplicationContext)applicationContextXml).close();
+		((ConfigurableApplicationContext)applicationContextXml).close(); // Sin esto el bean no es destruido
 	}
 
 }
